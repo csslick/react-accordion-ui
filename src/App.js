@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import data from './data';
 import './App.css';
 import Question from './components/Question';
 
 function App() {
-  const [questions, setQuestions] = useState(data);
-  console.log(questions)
+  const [questions, setQuestions] = useState([]);
+  // console.log(questions)
+
+  useEffect(() => {
+    setQuestions(data);
+  }, [])
 
   return (
     <section>
